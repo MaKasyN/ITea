@@ -5,17 +5,25 @@ let getNumberToggle = true;
 
 function getNumberOfTeam(){
     const numInput = findElement('#input-num');
-    const nameInput = findElement('#input-name');
-    numOfTeam = +numInput.value;
-    visibilityContainersToggle();
-    getNumberToggle = false;
+    if(checkValue(numInput)){
+        numOfTeam = +numInput.value;
+        visibilityContainersToggle();
+        getNumberToggle = false;
+    }else{
+        alertWindowOn('Please enter number of team.')
+    }
 }
 
 function getName(){
+    
     const nameInput = findElement('#input-name');
-    const name = nameInput.value;
-    team.push(name);
-    nameInput.value = '';
+    if(checkValue(nameInput)){
+        const name = nameInput.value;
+        numOfTeam === team.length ? team.push(name) : alertWindowOn('Team is full!');
+        nameInput.value = '';
+    }else{
+        alertWindowOn('Please enter name of person.')
+    }
 }
 
 function findElement(selector){
@@ -39,4 +47,15 @@ function checkValue(element){
 
 function getNameToggle(){
     getNumberToggle ? getNumberOfTeam() : getName();
+}
+
+async function alertWindowOn(alertStr){
+    alertWindowToggle()
+    const alertParagraph = findElement('.alert-paragraph');
+    alertParagraph.innerHTML = alertStr;
+}
+
+function alertWindowToggle(){
+    const alertContainer = findElement('.alert-container');
+    visibilityElementToggle(alertContainer);
 }

@@ -20,6 +20,7 @@ body,
     justify-content: center;
     flex-direction: column;
     font-size: 16px;
+    position: relative;
 }
 
 .inputs{
@@ -38,5 +39,30 @@ body,
 }
 
 .display-none{
-    display: none;
+    display: none!important;
+}
+
+.alert-container{
+    position: absolute;
+}
+
+.alert-container{
+    min-width: 200px;
+    min-height: 50px;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.alert-button{
+    border-radius: 5px;
+    padding: 4px 9px;
+}
+
+.alert-paragraph{
+    padding: 10px;
 }
