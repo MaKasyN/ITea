@@ -8,11 +8,15 @@
     </head>
     <body>
         <div class="content-container">
-            <div class="input-group-container">
+                <div class="input-group-container" id="num-container">
+                        <p class="label-name">Enter number of person in team:</p>
+                        <input id="input-num" class="inputs"/>
+                    </div>
+            <div class="input-group-container display-none" id="name-container">
                 <p class="label-name">Enter name:</p>
-                <input class="input-name"/>
+                <input id="input-name" class="inputs"/>
             </div>
-            <button class="send-button" onclick="getNames()">Send</button>
+            <button class="send-button" onclick="getNameToggle()">Send</button>
         </div>
     </body>
 </html>
