@@ -2,27 +2,28 @@
 let team = [];
 let numOfTeam = 0;
 let getNumberToggle = true;
+const NUM_REG_EXP = /^[0-9]{1,2}$/;
+const NAME_REG_EXP = /^[A-Za-z]+$/;
 
 function getNumberOfTeam(){
     const numInput = findElement('#input-num');
-    if(checkValue(numInput)){
-        numOfTeam = +numInput.value;
+    numOfTeam = +numInput.value;
+    if(isNumFrom1to99()){
         visibilityContainersToggle();
         getNumberToggle = false;
-    }else{
-        alertWindowOn('Please enter number of team.')
+    } else {
+        alertWindowOn('Please enter num of team in [1 - 99] range');
     }
 }
 
 function getName(){
-    
     const nameInput = findElement('#input-name');
-    if(checkValue(nameInput)){
-        const name = nameInput.value;
-        numOfTeam === team.length ? team.push(name) : alertWindowOn('Team is full!');
+    const name = nameInput.value;
+    if(isName(name)){
+        numOfTeam === team.length ? alertWindowOn('Team is full!') : team.push(name);
         nameInput.value = '';
-    }else{
-        alertWindowOn('Please enter name of person.')
+    } else {
+        alertWindowOn('In name must be more 3 LETTERS!');
     }
 }
 
@@ -58,4 +59,12 @@ async function alertWindowOn(alertStr){
 function alertWindowToggle(){
     const alertContainer = findElement('.alert-container');
     visibilityElementToggle(alertContainer);
+}
+
+function isNumFrom1to99(){
+    return (numOfTeam < 1) ? false : NUM_REG_EXP.test(numOfTeam) ? true : false;
+}
+
+function isName(name){
+    return (name.length < 3) ? false : NAME_REG_EXP.test(name) ? true : false;
 }
