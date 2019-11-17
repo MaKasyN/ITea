@@ -50,13 +50,16 @@ body,
 .alert-container{
     min-width: 200px;
     min-height: 50px;
-    background-color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 20px;
+    cursor: pointer;
     border-radius: 5px;
+    background: linear-gradient(45deg, rgba(33, 33, 33, 0.9), rgba(117, 117, 117, 0.9) 70.71%);
+    color: rgba(250, 250, 250, 0.9);
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 .show-team,
@@ -78,21 +81,30 @@ body,
 }
 
 .arrayElement{
-    width: 25%;
+    width: 15%;
     min-height: 90px;
     margin: 20px;
     padding: 5px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    background: linear-gradient(45deg, rgba(33, 33, 33, 0.9), rgba(117, 117, 117, 0.9) 70.71%);
+    color: rgba(250, 250, 250, 0.9);
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.arrayElement:hover{
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 .array-element-avatar{
     border-radius: 50%;
-    height: 45px;
-    width: 45px;
+    height: 60px;
+    width: 60px;
     margin: 0 10px;
+    background: linear-gradient(45deg, rgba(189, 189, 189, 0.9), rgba(238, 238, 238, 0.9) 70.71%);
 }
 
 .array-element-content-container{
@@ -107,7 +119,7 @@ body,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2px 0 1px 0;
+    padding: 2px 10px 1px 0;
 }
 
 .left-column{
@@ -128,4 +140,39 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.person-element-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.content-container{
+    background: linear-gradient(45deg, rgba(38, 50, 56, 0.9), rgba(84, 110, 122, 0.9) 70.71%);
+}
+
+.array-container{
+    background: linear-gradient(45deg, rgba(120, 144, 156, 0.9), rgba(236, 239, 241, 0.9) 70.71%);
+}
+
+.input-group-container{
+    color: rgba(236, 239, 241, 0.9);
+}
+
+button{
+    background: linear-gradient(45deg, rgba(33, 33, 33, 0.9), rgba(117, 117, 117, 0.9) 70.71%);
+    color: rgba(250, 250, 250, 0.9);
+    min-width: 80px;
+    min-height: 40px;
+}
+
+input{
+    background: linear-gradient(45deg, rgba(120, 144, 156, 0.9), rgba(236, 239, 241, 0.9) 70.71%);
+    color: rgba(38, 50, 56, 0.9);
+    font-weight: 600;
+    padding: 1px 10px;
+    min-width: 40px;
+    min-height: 25px;
 }

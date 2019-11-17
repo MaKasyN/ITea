@@ -38,6 +38,7 @@ function getNumberOfTeam(){
         getNumberToggle = false;
     } else {
         alertWindowOn('Please enter num of team in [1 - 99] range');
+        numInput.value = '';
     }
 }
 
@@ -47,13 +48,12 @@ function getName(){
     if(isName(name)){
         if(numOfTeam === names.length){
             alertWindowOn ('Team is full!')
-            createTeam();
         }else{
             deleteRenderArray();
             names.push(name);
             renderNamesArray();
             if(numOfTeam === names.length){
-                console.log('pppp');
+                createTeam();
                 showOptionsButtons()
             }
         }
@@ -130,7 +130,7 @@ function  getSalaryForPosition(min, max){
   }
 
   function renderPersonElOFArray(name, position, salary){
-    const personCardTemplate = '<div class="array-element-avatar"></div><div class="array-element-content-container"><p class="content-container-paragraph"><span class="left-column">name:</span><span class="right-column">' + name + '</span></p><p class="content-container-paragraph"><span class="left-column">position:</span><span class="right-column">' + position + '</span></p><p class="content-container-paragraph"><span class="left-column">salary:</span><span class="right-column">' + salary + '</span></p></div>';
+    const personCardTemplate = '<div class="person-element-container" onclick="showperson('+ '\'' + name + '\'' + ', ' + '\'' + position + '\'' + ', ' + '\'' + salary + '\'' + ')"><div class="array-element-avatar"></div><div class="array-element-content-container"><p class="content-container-paragraph"><span class="left-column">name:</span><span class="right-column">' + name + '</span></p><p class="content-container-paragraph"><span class="left-column">position:</span><span class="right-column">' + position + '</span></p><p class="content-container-paragraph"><span class="left-column">salary:</span><span class="right-column">' + salary + '</span></p></div></div>';
     renderElOfArray(personCardTemplate);
   }
 
@@ -166,3 +166,13 @@ function  getSalaryForPosition(min, max){
     visibilityElementToggle(nameContainer);
   }
 
+  function showTeam(){
+    deleteRenderArray();
+    team.forEach(person => renderPersonElOFArray(person.name, person.info.position, person.info.salary));
+  }
+
+  function showperson(name, position, salary){
+      console.log('hey');
+    const personInformation = 'Hello I am: ' + name + ', I\'m ' + position + ' and I earn: ' + salary + '.';
+    alertWindowOn(personInformation);
+  }
