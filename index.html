@@ -8,18 +8,26 @@
     </head>
     <body>
         <div class="content-container">
-                <div class="input-group-container" id="num-container">
-                        <p class="label-name">Enter number of person in team:</p>
-                        <input id="input-num" class="inputs"/>
-                    </div>
-            <div class="input-group-container display-none" id="name-container">
-                <p class="label-name">Enter name:</p>
-                <input id="input-name" class="inputs"/>
+            <div class="array-container">
+
             </div>
-            <button class="send-button" onclick="getNameToggle()">Send</button>
-            <div class="alert-container display-none">
-                <p class="alert-paragraph"></p>
-                <button class="alert-button" onclick="alertWindowToggle()">OK</button>
+            <div class="send-button-container">
+                <div class="input-group-container" id="num-container">
+                    <p class="label-name">Enter number of person in team:</p>
+                    <input id="input-num" class="inputs"/>
+                </div>
+                <div class="input-group-container display-none" id="name-container">
+                    <p class="label-name">Enter name:</p>
+                    <input id="input-name" class="inputs"/>
+                </div>
+                <button class="send-button" onclick="getNameToggle()">Send</button>
+                <div class="alert-container display-none">
+                    <p class="alert-paragraph"></p>
+                    <button class="alert-button" onclick="alertWindowToggle()">OK</button>
+                </div>
+            </div>
+            <div class="options-button-container display-none">
+                <button class="show-team">Show team</button>
             </div>
         </div>
     </body>
